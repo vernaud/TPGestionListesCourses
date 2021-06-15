@@ -4,6 +4,9 @@ public class Blocs {
     private int id;
     private String nom;
 
+    public Blocs() {
+    }
+
     public Blocs(int id, String nom) {
         this.id = id;
         this.nom = nom;

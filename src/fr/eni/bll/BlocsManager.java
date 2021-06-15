@@ -10,6 +10,8 @@ public class BlocsManager {
 
     public List<Blocs> touslesblocs() {
         BlocsDAO blkDAO = DAOFactory.getBlocsDAO();
+        List<Blocs> listeBlocs = blkDAO.selectAll();
+        return listeBlocs;
     }
 
 
