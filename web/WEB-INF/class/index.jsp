@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Listes prédéfinies</title>
   </head>
   <body>
-  $END$
+
+  <a href="liste"><button>Ajouter une liste</button></a>
   </body>
 </html>

@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Nouvelle liste</title>
 </head>
 <body>
-
+<a href="accueil"><button>Retour</button></a>
 </body>
 </html>
