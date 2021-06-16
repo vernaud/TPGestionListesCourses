@@ -29,6 +29,7 @@ public class AccueilServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Affichage des listes
+        init();
         request.setAttribute("collectionNomDesListes", collectionNomDesListes);
 
         // Supprimer une liste
@@ -44,8 +45,4 @@ public class AccueilServlet extends HttpServlet {
         request.getRequestDispatcher("WEB-INF/class/index.jsp").forward(request,response);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }
