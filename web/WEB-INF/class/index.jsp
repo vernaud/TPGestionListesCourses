@@ -11,7 +11,7 @@
         <li>
           <span>${liste.nom}</span>
           <button>Commencer les courses</button>
-          <button>Supprimer la liste</button>
+          <a href="accueil?choix=${liste.id}" name="supprimer"><button>Supprimer la liste</button></a>
         </li>
     </c:forEach>
   </ul>
