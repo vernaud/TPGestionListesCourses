@@ -5,15 +5,10 @@
 </head>
 <body>
 <form action="liste" method="post">
-    <label for="nom">Nom</label>
+    <label for="nom">Liste</label>
     <input type="text" id="nom" name="nomListe">
-</form>
-
-<p>méthode 'contenu de la liste'</p>
-
-<form action="liste" method="post">
-    <label for="article">Nom</label>
-    <input type="text" id="article" name="newArticle">
+<%--    <label for="article">Article</label>--%>
+<%--    <input type="text" id="article" name="newArticle">--%>
     <input type="submit" value="Ajouter">
 </form>
 <a href="accueil"><button>Retour</button></a>

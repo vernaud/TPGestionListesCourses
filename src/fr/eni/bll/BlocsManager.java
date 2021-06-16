@@ -23,4 +23,9 @@ public class BlocsManager {
         return listeBlocs;
     }
 
+    public void addListe(String nomListe) {
+        Blocs b = new Blocs(nomListe);
+        blkDAO.addListe(b);
+
+    }
 }
