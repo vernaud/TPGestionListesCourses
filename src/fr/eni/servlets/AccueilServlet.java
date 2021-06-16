@@ -14,12 +14,21 @@ import java.util.List;
 
 @WebServlet("/accueil")
 public class AccueilServlet extends HttpServlet {
+
+    private List<Blocs> collectionNomDesListes;
+    BlocsManager blocManager;
+
+    @Override
+    public void init() throws ServletException {
+        collectionNomDesListes = new ArrayList<>();
+        blocManager = new BlocsManager();
+        collectionNomDesListes = blocManager.touslesblocs();
+
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Affichage des listes
-        List<Blocs> collectionNomDesListes = new ArrayList<>();
-        BlocsManager blocManager = new BlocsManager();
-        collectionNomDesListes = blocManager.touslesblocs();
         request.setAttribute("collectionNomDesListes", collectionNomDesListes);
 
         // Supprimer une liste
@@ -27,6 +36,8 @@ public class AccueilServlet extends HttpServlet {
             int supprimerListe = Integer.parseInt(request.getParameter("choix"));
             System.out.println("Supprimer id : " + supprimerListe);
             blocManager.supprListe(supprimerListe);
+            init();
+            request.setAttribute("collectionNomDesListes", collectionNomDesListes);
         }
 
         // Redirection vers accueil.jsp
