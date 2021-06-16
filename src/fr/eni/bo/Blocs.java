@@ -12,6 +12,10 @@ public class Blocs {
         this.nom = nom;
     }
 
+    public Blocs(String nom) {
+        this.nom = nom;
+    }
+
     public int getId() {
         return id;
     }

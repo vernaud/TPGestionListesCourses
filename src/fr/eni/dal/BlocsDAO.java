@@ -10,4 +10,5 @@ public interface BlocsDAO {
     void supprListe(int supprimerListe);
 
 
+    void addListe(Blocs nomListe);
 }

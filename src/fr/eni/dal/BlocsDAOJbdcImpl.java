@@ -51,4 +51,27 @@ public class BlocsDAOJbdcImpl implements BlocsDAO{
             System.err.println(e.getMessage());
         }
     }
+
+    @Override
+    public void addListe(Blocs l) {
+        String INSERT_LISTE = "INSERT INTO LISTES (nom) VALUES (?);";
+
+        try (Connection connection = ConnectionProvider.getConnection();
+             PreparedStatement psmt = connection.prepareStatement(INSERT_LISTE, PreparedStatement.RETURN_GENERATED_KEYS)
+        ){
+            // insérer la liste en base
+            psmt.setString(1, l.getNom());
+            psmt.executeUpdate();
+            // récupération de l'id auto-généré
+            ResultSet rs = psmt.getGeneratedKeys();
+            if (rs.next()){
+                l.setId(rs.getInt(1));
+            }
+            // insérer articles en base
+
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+    }
 }

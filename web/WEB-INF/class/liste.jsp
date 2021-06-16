@@ -1,16 +1,16 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: rverdon2021
-  Date: 15/06/2021
-  Time: 12:23
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Nouvelle liste</title>
 </head>
 <body>
+<form action="liste" method="post">
+    <label for="nom">Liste</label>
+    <input type="text" id="nom" name="nomListe">
+<%--    <label for="article">Article</label>--%>
+<%--    <input type="text" id="article" name="newArticle">--%>
+    <input type="submit" value="Ajouter">
+</form>
 <a href="accueil"><button>Retour</button></a>
 </body>
 </html>
