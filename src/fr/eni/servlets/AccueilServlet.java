@@ -23,17 +23,24 @@ public class AccueilServlet extends HttpServlet {
         collectionNomDesListes = blocmanager.touslesblocs();
         request.setAttribute("collectionNomDesListes", collectionNomDesListes);
 
+        /*test affichage
+        Blocs bloc1 = new Blocs(1,"Intermarché");
+        Blocs bloc2 = new Blocs(2,"SuperU");
+        Blocs bloc3 = new Blocs(3,"Bricomarché");
+
+        List<Blocs> collectionNomDesListes = new ArrayList<>();
+        collectionNomDesListes.add(bloc1);
+        collectionNomDesListes.add(bloc2);
+        collectionNomDesListes.add(bloc3);
+
+        request.setAttribute("collectionNomDesListes", collectionNomDesListes);*/
+
         // Redirection vers accueil.jsp
         request.getRequestDispatcher("WEB-INF/class/index.jsp").forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Récupérer le 'name' du boutton
 
-        // appel du deleteListe
-
-        // Redirection vers accueil.jsp
-        doGet(request,response);
     }
 }

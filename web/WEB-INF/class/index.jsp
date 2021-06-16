@@ -11,9 +11,7 @@
         <li>
           <span>${liste.nom}</span>
           <button>Commencer les courses</button>
-          <form action="accueil" method="post">
-            <input type="submit" value="Supprimer la liste" name="supprimer-liste">
-          </form>
+          <button>Supprimer la liste</button>
         </li>
     </c:forEach>
   </ul>
