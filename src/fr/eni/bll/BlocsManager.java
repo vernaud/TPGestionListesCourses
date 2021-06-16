@@ -8,11 +8,19 @@ import java.util.List;
 
 public class BlocsManager {
 
+    BlocsDAO blkDAO;
+
+    public BlocsManager(){
+        blkDAO = DAOFactory.getBlocsDAO();
+    }
+
+    public void supprListe(int id) {
+        blkDAO.supprListe(id);
+    }
+
     public List<Blocs> touslesblocs() {
-        BlocsDAO blkDAO = DAOFactory.getBlocsDAO();
         List<Blocs> listeBlocs = blkDAO.selectAll();
         return listeBlocs;
     }
-
 
 }

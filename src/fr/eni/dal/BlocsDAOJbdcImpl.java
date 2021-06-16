@@ -37,4 +37,18 @@ public class BlocsDAOJbdcImpl implements BlocsDAO{
 
         return listeBlocs;
     }
+
+    @Override
+    public void supprListe(int idListeSuppr) {
+        String DELETE_LISTE = "DELETE FROM LISTES WHERE id = ?";
+
+        try (Connection connection = ConnectionProvider.getConnection();
+             PreparedStatement psmt = connection.prepareStatement(DELETE_LISTE)) {
+            psmt.setInt(1,idListeSuppr);
+            psmt.executeUpdate();
+
+        } catch (SQLException e){
+            System.err.println(e.getMessage());
+        }
+    }
 }

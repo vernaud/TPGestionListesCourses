@@ -18,13 +18,16 @@ public class AccueilServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Affichage des listes
         List<Blocs> collectionNomDesListes = new ArrayList<>();
-        BlocsManager blocmanager = new BlocsManager();
-        collectionNomDesListes = blocmanager.touslesblocs();
+        BlocsManager blocManager = new BlocsManager();
+        collectionNomDesListes = blocManager.touslesblocs();
         request.setAttribute("collectionNomDesListes", collectionNomDesListes);
 
         // Supprimer une liste
-        String supprimerListe = request.getParameter("choix");
-        System.out.println(supprimerListe);
+        if (request.getParameter("choix") != null){
+            int supprimerListe = Integer.parseInt(request.getParameter("choix"));
+            System.out.println("Supprimer id : " + supprimerListe);
+            blocManager.supprListe(supprimerListe);
+        }
 
         // Redirection vers accueil.jsp
         request.getRequestDispatcher("WEB-INF/class/index.jsp").forward(request,response);
